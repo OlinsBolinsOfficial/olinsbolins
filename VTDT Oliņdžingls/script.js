@@ -5,7 +5,7 @@ let chosenArtist = null;
 
 // Ielādē izpildītājus un izvēlas vienu no tiem
 async function startGame() {
-  document.getElementById("feedback").innerHTML = "📡 Ielādējas dati...";
+  document.getElementById("feedback").innerHTML = "Ielādējas dati";
 
   const response = await fetch("artists.json");
   artists = await response.json();
@@ -13,7 +13,7 @@ async function startGame() {
   chosenArtist = artists[Math.floor(Math.random() * artists.length)];
   console.log("Chosen Artist:", chosenArtist);
 
-  document.getElementById("feedback").innerHTML = "🎵 Mini izpildītāju!";
+  document.getElementById("feedback").innerHTML = "Mini izpildītāju!";
   
   // Poga strādā kas spēle sākas
   document.querySelector("button").disabled = false;
@@ -89,3 +89,4 @@ alert(`Tu atminēji izpildītāju ${chosenArtist.name}!`);
 
 // sāk spēli
 startGame();
+
